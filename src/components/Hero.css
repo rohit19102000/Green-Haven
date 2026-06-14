@@ -1,0 +1,250 @@
+/* Hero Component Styling */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  padding-top: 80px; /* navbar offset */
+  overflow: hidden;
+  background-color: var(--dark); /* Reveals deep green-black as bg-image disappears */
+}
+
+/* Background Wrapper for scroll-driven animations */
+.hero-bg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  will-change: transform, opacity;
+}
+
+/* Background Image styling */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/bg-hero.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Very subtle zoom animation */
+  animation: bgZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes bgZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+/* Gradient Mask overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 24, 20, 0.45) 0%,
+    rgba(18, 24, 20, 0.75) 60%,
+    rgba(18, 24, 20, 0.95) 90%,
+    var(--dark) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Hero Badge */
+.hero-badge {
+  margin-bottom: 8px;
+}
+
+.hero-badge .badge {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  max-width: 800px;
+}
+
+.hero-title-highlight {
+  color: var(--accent);
+  background: linear-gradient(135deg, var(--accent), #e7956a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero Description */
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 400;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Buttons */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.btn-hero-book {
+  padding: 16px 36px;
+  font-size: 1.1rem;
+}
+
+.btn-hero-call {
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  background-color: var(--white);
+  color: var(--dark);
+  border: none;
+}
+
+.btn-hero-call:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary);
+}
+
+/* Scroll down mouse animation */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  transition: color var(--transition-fast);
+}
+
+.scroll-indicator:hover {
+  color: var(--white);
+}
+
+.mouse {
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  position: relative;
+}
+
+.scroll-indicator:hover .mouse {
+  border-color: var(--white);
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheel 1.6s infinite ease-in-out;
+}
+
+.scroll-indicator:hover .wheel {
+  background-color: var(--white);
+}
+
+@keyframes scrollWheel {
+  0% {
+    top: 6px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    top: 22px;
+    opacity: 0;
+  }
+}
+
+/* Animation Utilities for Entry */
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.delay-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 576px) {
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .btn-hero-book, .btn-hero-call {
+    width: 100%;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}

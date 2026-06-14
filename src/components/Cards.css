@@ -1,0 +1,247 @@
+/* Cards Component Styling */
+
+.cards-section {
+  background-color: var(--white);
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+/* Card front header gradients */
+.color-bg-green {
+  background: linear-gradient(135deg, var(--primary), #4caf50);
+}
+
+.color-bg-orange {
+  background: linear-gradient(135deg, var(--accent), #ff9800);
+}
+
+.color-bg-gold {
+  background: linear-gradient(135deg, #d4af37, #fbc02d);
+}
+
+.color-bg-purple {
+  background: linear-gradient(135deg, #6a1b9a, #9c27b0);
+}
+
+.card-front-top {
+  height: 160px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: var(--white);
+  position: relative;
+}
+
+.card-icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-duration-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+  align-self: flex-end;
+}
+
+.card-front-body {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.card-tagline {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.card-price-block {
+  margin-top: auto;
+  display: flex;
+  align-items: baseline;
+  color: var(--primary);
+}
+
+.price-symbol {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.price-value {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.price-unit {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-left: 4px;
+  font-weight: 600;
+}
+
+.card-front-footer {
+  padding: 16px 24px;
+  border-top: 1px solid rgba(46, 125, 50, 0.06);
+  text-align: center;
+  background-color: var(--light);
+}
+
+.flip-hint {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  animation: pulseHint 2s infinite ease-in-out;
+}
+
+@keyframes pulseHint {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* Card Back Design */
+.card-back-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 16px;
+}
+
+.card-back-title {
+  font-size: 1.35rem;
+  color: var(--white);
+}
+
+.card-back-duration {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+.card-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.card-feature-item-back {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.card-feature-item-back .bullet {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.card-back-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+.card-back-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-back-price span {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card-back-price strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--white);
+}
+
+.card-back-price small {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
