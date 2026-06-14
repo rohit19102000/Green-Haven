@@ -29,19 +29,19 @@
 
 /* Card front header gradients */
 .color-bg-green {
-  background: linear-gradient(135deg, var(--primary), #4caf50);
+  background: linear-gradient(135deg, var(--primary), #D0985C);
 }
 
 .color-bg-orange {
-  background: linear-gradient(135deg, var(--accent), #ff9800);
+  background: linear-gradient(135deg, var(--accent), #E0A96D);
 }
 
 .color-bg-gold {
-  background: linear-gradient(135deg, #d4af37, #fbc02d);
+  background: linear-gradient(135deg, #C5A880, #B4966E);
 }
 
 .color-bg-purple {
-  background: linear-gradient(135deg, #6a1b9a, #9c27b0);
+  background: linear-gradient(135deg, #7E7263, #3E3830);
 }
 
 .card-front-top {

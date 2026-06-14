@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Users, FileText, CheckCircle, Leaf, Mail, PhoneCall } from 'lucide-react';
+import { Calendar, Users, FileText, CheckCircle, Sparkles, Mail, PhoneCall } from 'lucide-react';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import { PACKAGES } from './Cards';
 import './Booking.css';
@@ -31,7 +31,7 @@ export default function Booking({ selectedPackageId, onSelectPackage }) {
   useEffect(() => {
     const base = activePackage ? activePackage.price : 0;
     const sub = base * formData.guests;
-    const taxVal = Math.round(sub * 0.08); // 8% local tax
+    const taxVal = Math.round(sub * 0.0825); // 8.25% Dallas sales tax
     const totalVal = sub + taxVal;
 
     setPricing({
@@ -63,7 +63,7 @@ export default function Booking({ selectedPackageId, onSelectPackage }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Simulate API reservation request
-    const randNum = 'GH-' + Math.floor(100000 + Math.random() * 900000);
+    const randNum = 'UP-' + Math.floor(100000 + Math.random() * 900000);
     setConfirmationNumber(randNum);
     setIsSubmitted(true);
   };
@@ -97,9 +97,9 @@ export default function Booking({ selectedPackageId, onSelectPackage }) {
       >
         <div className="section-header">
           <span className="badge">Reservations</span>
-          <h2 className="title-lg booking-title">Book Your Escape</h2>
+          <h2 className="title-lg booking-title">Book Your Picnic</h2>
           <p className="section-subtitle">
-            Secure your scenic cottage spot or traditional feast date. No pre-payment required.
+            Secure your preferred date and time. No credit card required to request.
           </p>
         </div>
 
@@ -215,7 +215,7 @@ export default function Booking({ selectedPackageId, onSelectPackage }) {
                 
                 <div className="selected-package-summary">
                   <div className="summary-icon">
-                    <Leaf size={20} />
+                    <Sparkles size={20} />
                   </div>
                   <div>
                     <h4>{activePackage.title}</h4>
@@ -237,7 +237,7 @@ export default function Booking({ selectedPackageId, onSelectPackage }) {
                     <span>${pricing.subtotal}</span>
                   </div>
                   <div className="price-row">
-                    <span>Agri Tax (8%):</span>
+                    <span>Dallas Sales Tax (8.25%):</span>
                     <span>${pricing.tax}</span>
                   </div>
                   <div className="price-row total-row border-top">
@@ -248,11 +248,11 @@ export default function Booking({ selectedPackageId, onSelectPackage }) {
 
                 <div className="payment-guarantee">
                   <Users size={16} />
-                  <span>No credit card required. Pay on arrival.</span>
+                  <span>No credit card required to submit request.</span>
                 </div>
 
                 <button type="submit" className="btn btn-primary btn-submit-booking">
-                  Confirm Booking Details
+                  Request This Picnic
                 </button>
               </div>
 
@@ -263,15 +263,15 @@ export default function Booking({ selectedPackageId, onSelectPackage }) {
               <div className="success-icon-wrapper">
                 <CheckCircle size={64} />
               </div>
-              <h3 className="success-heading">Reservation Successful!</h3>
+              <h3 className="success-heading">Booking Request Received!</h3>
               <p className="success-desc">
-                Thank you, <strong>{formData.fullName}</strong>. We have reserved your farmhouse spot at Green Haven. 
-                A booking confirmation email has been dispatched to <strong>{formData.email}</strong>.
+                Thank you, <strong>{formData.fullName}</strong>. We have received your picnic request. 
+                A confirmation has been sent to <strong>{formData.email}</strong>. Our styling coordinator will contact you within 24 hours to confirm date availability and coordinate theme details.
               </p>
 
               <div className="success-ticket glass-panel">
                 <div className="ticket-header">
-                  <span className="ticket-logo">GH Green Haven</span>
+                  <span className="ticket-logo">UP Uptown Picnic</span>
                   <span className="ticket-id">#{confirmationNumber}</span>
                 </div>
                 
@@ -296,7 +296,7 @@ export default function Booking({ selectedPackageId, onSelectPackage }) {
               </div>
 
               <div className="success-notice">
-                <p><strong>Note:</strong> Please present this ticket at the resort entrance. Payment will be collected in cash or UPI upon arrival.</p>
+                <p><strong>Next Steps:</strong> We will review date availability and reach out to finalize location details and coordinate setup details. Payment instructions will be sent with your finalized invoice.</p>
               </div>
 
               <button className="btn btn-secondary mt-6" onClick={handleResetForm}>

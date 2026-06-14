@@ -6,39 +6,33 @@ import './Gallery.css';
 const GALLERY_IMAGES = [
   {
     id: 1,
-    url: '/bg-hero.jpg', // Use our main background image too
-    category: 'picnic',
-    title: 'Solapur Valley Lawns'
+    url: '/hero_luxe_picnic.png',
+    category: 'boho',
+    title: 'Luxe Picnic on the Lawn'
   },
   {
     id: 2,
-    url: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80',
-    category: 'dining',
-    title: 'Rustic Farm Breakfast'
+    url: '/boho_dream_picnic.png',
+    category: 'boho',
+    title: 'Pampas Grass Boho Styling'
   },
   {
     id: 3,
-    url: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80',
-    category: 'farm',
-    title: 'Our Fruit Orchards'
+    url: '/romantic_proposal.png',
+    category: 'romantic',
+    title: 'Anniversary & Proposals'
   },
   {
     id: 4,
-    url: 'https://images.unsplash.com/photo-1526218626217-dc65a29bb444?auto=format&fit=crop&w=800&q=80',
-    category: 'picnic',
-    title: 'Lawn Recreations & Swings'
+    url: '/garden_party.png',
+    category: 'group',
+    title: 'Celebrations & Bridal Showers'
   },
   {
     id: 5,
-    url: 'https://images.unsplash.com/photo-1595855759920-86582396756a?auto=format&fit=crop&w=800&q=80',
-    category: 'farm',
-    title: 'Fruit Harvesting Tours'
-  },
-  {
-    id: 6,
-    url: 'https://images.unsplash.com/photo-1472120435166-d890c501b949?auto=format&fit=crop&w=800&q=80',
-    category: 'sunset',
-    title: 'Scenic Hilltop Sunsets'
+    url: '/sunset_toast.png',
+    category: 'details',
+    title: 'Charcuterie & Toast Details'
   }
 ];
 
@@ -81,13 +75,13 @@ export default function Gallery() {
           <span className="badge">Visual Tour</span>
           <h2 className="title-lg gallery-title">Scenic Highlights</h2>
           <p className="section-subtitle">
-            Explore glimpses of our organic farms, cozy picnic cottages, and beautiful natural backdrops.
+            Explore snapshots of our beautiful setups, themed events, and curated details in DFW.
           </p>
         </div>
 
         {/* Filter categories */}
         <div className="gallery-filters">
-          {['all', 'picnic', 'dining', 'farm', 'sunset'].map((cat) => (
+          {['all', 'boho', 'romantic', 'group', 'details'].map((cat) => (
             <button
               key={cat}
               className={`filter-btn ${filter === cat ? 'active' : ''}`}

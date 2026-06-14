@@ -1,68 +1,72 @@
 import React, { useState } from 'react';
-import { Calendar, Leaf, Compass, Coffee, Utensils, HelpCircle } from 'lucide-react';
+import { Sparkles, Heart, Gift, Compass } from 'lucide-react';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import './Cards.css';
 
 export const PACKAGES = [
   {
-    id: 'rustic-picnic',
-    title: 'Rustic Cottage Picnic',
-    price: 25,
-    tagline: 'Perfect for family day outs',
-    icon: Leaf,
-    color: 'green',
-    features: [
-      'Access to a private garden cottage',
-      'Traditional chulha lunch & buttermilk',
-      'Free archery and lawn games',
-      'Guided farm tour & animal feeding'
-    ],
-    duration: '9:00 AM - 6:00 PM'
-  },
-  {
-    id: 'sunset-hilltop',
-    title: 'Sunset Hilltop Escape',
-    price: 35,
-    tagline: 'Unwind under the open skies',
-    icon: Compass,
-    color: 'orange',
-    features: [
-      'Reserved hillside sunset deck',
-      'Evening high tea & hot village snacks',
-      'Rustic swing sets & hammock access',
-      'Campfire circle (winter/monsoons)'
-    ],
-    duration: '3:00 PM - 9:00 PM'
-  },
-  {
-    id: 'organic-feast',
-    title: 'Traditional Farm Feast',
-    price: 45,
-    tagline: 'Savor local village culinary arts',
-    icon: Utensils,
+    id: 'boho-dream',
+    title: 'The Boho Dream',
+    price: 180,
+    tagline: 'Perfect for social gatherings & girls day out',
+    icon: Sparkles,
     color: 'gold',
     features: [
-      'Live traditional cooking demo',
-      'Unlimited wood-fired Maharashtrian buffet',
-      'Organic sugarcane juice extraction tour',
-      'Chulha bread (bhakri) workshops'
+      'Curated bohemian styling & layout',
+      'Low rustic wooden picnic table',
+      'Plush cushions & high-quality rugs',
+      'Custom chalkboard message board',
+      'Sparkling water & setups for up to 4 guests'
     ],
-    duration: '11:00 AM - 4:00 PM'
+    duration: '2 Hours'
   },
   {
-    id: 'agri-harvest',
-    title: 'The Orchard Harvest Tour',
-    price: 20,
-    tagline: 'Connect with agriculture & soils',
-    icon: Coffee,
+    id: 'romantic-rendezvous',
+    title: 'Romantic Rendezvous',
+    price: 220,
+    tagline: 'Ideal for proposals, dates, & anniversaries',
+    icon: Heart,
+    color: 'orange',
+    features: [
+      'Intimate setup styled for two guests',
+      'Rose petal walkway & decor accents',
+      'Champagne bucket with sparkling cider',
+      'Chocolate-covered strawberries or sweet treats',
+      'Perfect for anniversary or marriage proposals'
+    ],
+    duration: '2 Hours'
+  },
+  {
+    id: 'grand-celebration',
+    title: 'The Grand Celebration',
+    price: 350,
+    tagline: 'For birthdays, showers, & micro-events',
+    icon: Gift,
     color: 'purple',
     features: [
-      'Mango & guava orchard walking tour',
-      'Fresh fruit harvesting (seasonal)',
-      'Traditional pottery wheel lesson',
-      'Take-home organic seed kit'
+      'Extended seating for 5 to 10 guests',
+      'Multiple styled low-profile tables',
+      'Premium floral arrangements & balloon accents',
+      'Lawn game package (cornhole, giant Jenga)',
+      'Cheese & charcuterie grazing platter'
     ],
-    duration: '8:00 AM - 1:00 PM'
+    duration: '2.5 Hours'
+  },
+  {
+    id: 'dfw-custom-luxe',
+    title: 'DFW Custom Luxe',
+    price: 500,
+    tagline: 'Completely tailored corporate or social events',
+    icon: Compass,
+    color: 'green',
+    features: [
+      'Tailored for large groups of 10 to 30 guests',
+      'Fully customized color palette & design theme',
+      'Full tablescape styling with dinnerware',
+      'Dedicated on-site coordinator options',
+      'Catering coordination & custom upgrades'
+    ],
+    duration: '3+ Hours'
   }
 ];
 
@@ -92,7 +96,7 @@ export default function Cards({ onSelectPackage }) {
         className={`container cards-container reveal-on-scroll ${isRevealed ? 'revealed' : ''}`}
       >
         <div className="section-header">
-          <span className="badge">Curated Escapes</span>
+          <span className="badge">Styled Experiences</span>
           <h2 className="title-lg cards-title">Our Picnic Packages</h2>
           <p className="section-subtitle">
             Hover over any card to flip and explore inclusions, timings, and custom rates.

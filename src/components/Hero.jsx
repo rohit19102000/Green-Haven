@@ -55,25 +55,24 @@ export default function Hero() {
       <div className="hero-container container">
         <div className="hero-content">
           <div className="hero-badge animate-fade-in-up">
-            <span className="badge badge-dark">Premium Agri-Tourism Destination</span>
+            <span className="badge badge-dark">Luxury Pop-Up Picnics</span>
           </div>
 
           <h1 className="hero-title animate-fade-in-up delay-1">
-            Welcome to <span className="hero-title-highlight">Green Haven</span>
+            Welcome to <span className="hero-title-highlight">Uptown Picnic Co.</span>
           </h1>
 
           <p className="hero-description animate-fade-in-up delay-2">
-            Experience the authentic beauty of rural Maharashtra with family-friendly picnic spots, 
-            traditional dining, and unforgettable farm experiences in Solapur.
+            Experience premium curated picnics and luxury event designs in the Dallas-Fort Worth area. We style, set up, and clean up for your perfect day.
           </p>
 
           <div className="hero-actions animate-fade-in-up delay-3">
             <button className="btn btn-primary btn-hero-book" onClick={() => handleScrollToSection('booking')}>
-              Book Your Visit <ArrowRight size={18} />
+              Book Your Picnic <ArrowRight size={18} />
             </button>
-            <a href="tel:+18005550199" className="btn btn-secondary btn-hero-call">
+            <a href="tel:+12145550199" className="btn btn-secondary btn-hero-call">
               <Phone size={18} />
-              <span>Call Now</span>
+              <span>(214) 555-0199</span>
             </a>
           </div>
         </div>

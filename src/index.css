@@ -1,36 +1,36 @@
-/* Green Haven Core CSS Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 :root {
   /* Fonts */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Outfit', sans-serif;
+  --font-display: 'Playfair Display', serif;
 
   /* Colors */
-  --primary: #2e7d32; /* Rich forest green */
-  --primary-rgb: 46, 125, 50;
-  --primary-hover: #1b5e20;
-  --primary-light: #e8f5e9;
+  --primary: #C5A880; /* Warm champagne gold */
+  --primary-rgb: 197, 168, 128;
+  --primary-hover: #B4966E;
+  --primary-light: #FAF7F2; /* Creamy off-white background */
   
-  --accent: #d87d4a; /* Warm terracotta/peach */
-  --accent-hover: #c66a37;
-  --accent-light: #fbebe1;
+  --accent: #D0985C; /* Warm copper gold */
+  --accent-hover: #B98348;
+  --accent-light: #FAF3E0;
   
-  --dark: #121814; /* Deep organic green-black */
-  --dark-rgb: 18, 24, 20;
-  --light: #faf9f6; /* Warm off-white / soft cream */
+  --dark: #2B2620; /* Luxury deep bronze-black */
+  --dark-rgb: 43, 38, 32;
+  --light: #FAF7F2; /* Creamy off-white background */
   --white: #ffffff;
   
-  --text-dark: #2d3732;
-  --text-muted: #5c6b63;
-  --text-light: #f5f5f5;
+  --text-dark: #3E3830;
+  --text-muted: #7E7263;
+  --text-light: #F4EFEB;
   
-  --border-light: rgba(46, 125, 50, 0.12);
-  --border-heavy: rgba(46, 125, 50, 0.25);
+  --border-light: rgba(197, 168, 128, 0.18);
+  --border-heavy: rgba(197, 168, 128, 0.35);
   
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 8px 16px rgba(18, 24, 20, 0.06);
-  --shadow-lg: 0 16px 32px rgba(18, 24, 20, 0.1);
-  --shadow-glass: 0 8px 32px 0 rgba(18, 24, 20, 0.08);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 8px 16px rgba(43, 38, 32, 0.05);
+  --shadow-lg: 0 16px 32px rgba(43, 38, 32, 0.08);
+  --shadow-glass: 0 8px 32px 0 rgba(43, 38, 32, 0.06);
 
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -203,7 +203,7 @@ button, input, textarea, select {
   font-weight: 600;
   border-radius: var(--radius-full);
   background: var(--accent-light);
-  color: #b65c2b;
+  color: #B98348;
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -326,10 +326,10 @@ button, input, textarea, select {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(46, 125, 50, 0.3);
+  background: rgba(197, 168, 128, 0.35);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(46, 125, 50, 0.6);
+  background: rgba(197, 168, 128, 0.6);
 }

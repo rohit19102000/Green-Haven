@@ -7,10 +7,10 @@ export default function About() {
   const [revealRef, isRevealed] = useIntersectionObserver({ triggerOnce: true });
 
   const features = [
-    { title: 'Lush Family Picnic Spots', desc: 'Beautifully manicured, shaded green lawns perfect for family seating, games, and relaxation.' },
-    { title: 'Farm-to-Table Dining', desc: 'Indulge in authentic local Maharashtrian meals, freshly cooked using farm-grown organic ingredients.' },
-    { title: 'Interactive Agri-Tourism', desc: 'Embark on guided farm walkthroughs, fruit picking sessions, and interact with friendly farm animals.' },
-    { title: 'Scenic Countryside Views', desc: 'Overlook Solapur’s peaceful rolling hills, sunset points, and beautiful farm horizons.' }
+    { title: 'Bespoke Styled Themes', desc: 'From boho-chic to classic romance, we design and coordinate themes that perfectly match your vision.' },
+    { title: '100% Turnkey Service', desc: 'We handle everything from delivery and setup to cleanup. All you have to do is show up and enjoy.' },
+    { title: 'Gourmet Collaborations', desc: 'Indulge in curated charcuterie boards, local pastries, and custom food options tailored for your event.' },
+    { title: 'Scenic DFW Locations', desc: 'Select from our curated list of scenic local parks, lakeshores, or the comfort of your own backyard.' }
   ];
 
   return (
@@ -21,15 +21,15 @@ export default function About() {
       >
         {/* Left text column */}
         <div className="about-text-content">
-          <span className="badge">Our Sanctuary</span>
+          <span className="badge">Our Passion</span>
           <h2 className="title-lg about-title">
-            About <span className="text-primary">Green Haven</span>
+            About <span className="text-primary">Uptown Picnic Co.</span>
           </h2>
           <p className="about-paragraph">
-            Nestled in the serene outskirts of Solapur, Green Haven is a premier agri-tourism resort 
-            designed to reconnect families with nature. We offer an authentic slice of rural beauty 
-            complemented by modern comforts. Whether you want to lounge on the grass, harvest fresh mangoes, 
-            or savor a traditional wooden-stove lunch, Green Haven is your peaceful weekend escape.
+            Uptown Picnic Company is a luxury picnic and event experience company serving the Dallas-Fort Worth area. 
+            We specialize in creating styled, custom pop-up picnic experiences that turn ordinary days into unforgettable memories. 
+            Whether you are planning a romantic proposal, celebrating a birthday, hosting a baby shower, or organizing a corporate gathering, 
+            our dedicated team coordinates every design detail so you can relax and celebrate in style.
           </p>
 
           <div className="about-features-grid">
@@ -54,8 +54,8 @@ export default function About() {
               <div className="stat-icon-wrapper color-green">
                 <MapPin size={24} />
               </div>
-              <span className="stat-number">15+</span>
-              <span className="stat-label">Scenic Picnic Zones</span>
+              <span className="stat-number">DFW</span>
+              <span className="stat-label">Service Area</span>
             </div>
             
             <div className="stat-card glass-panel card-hover-up">
@@ -63,36 +63,35 @@ export default function About() {
                 <ShieldCheck size={24} />
               </div>
               <span className="stat-number">100%</span>
-              <span className="stat-label">Organic Dining</span>
+              <span className="stat-label">Turnkey Service</span>
             </div>
 
             <div className="stat-card glass-panel card-hover-up">
               <div className="stat-icon-wrapper color-blue">
                 <Heart size={24} />
               </div>
-              <span className="stat-number">8k+</span>
-              <span className="stat-label">Happy Visitors</span>
+              <span className="stat-number">1k+</span>
+              <span className="stat-label">Happy Guests</span>
             </div>
 
             <div className="stat-card glass-panel card-hover-up">
               <div className="stat-icon-wrapper color-purple">
                 <Award size={24} />
               </div>
-              <span className="stat-number">4.9★</span>
-              <span className="stat-label">Google Rating</span>
+              <span className="stat-number">5.0★</span>
+              <span className="stat-label">Average Rating</span>
             </div>
           </div>
 
           <div className="about-quote-card glass-panel">
             <p className="quote-text">
-              "We had the best family gathering here. The food was cooked on traditional chulhas, 
-              giving it an amazing authentic flavor, and the children absolutely loved playing on the lawns!"
+              "Uptown Picnic Co. made our wedding anniversary proposal absolutely magical! The Boho Dream setup at Turtle Creek Park was stunning, down to the custom message board and flower choices. 10/10 turnkey service!"
             </p>
             <div className="quote-author">
-              <div className="author-avatar">SK</div>
+              <div className="author-avatar">SH</div>
               <div className="author-details">
-                <span className="author-name">Saurabh Kedar</span>
-                <span className="author-title">Family Visitor, Pune</span>
+                <span className="author-name">Sarah H.</span>
+                <span className="author-title">Dallas Resident</span>
               </div>
             </div>
           </div>

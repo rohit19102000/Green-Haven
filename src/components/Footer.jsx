@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Leaf, Phone, Mail, MapPin, Send, Heart } from 'lucide-react';
+import { Sparkles, Phone, Mail, MapPin, Send, Heart } from 'lucide-react';
 import './Footer.css';
 
 export default function Footer() {
@@ -35,25 +35,25 @@ export default function Footer() {
         <div className="footer-column footer-brand">
           <div className="nav-logo" onClick={() => handleScrollToSection('home')}>
             <div className="logo-icon">
-              <Leaf size={18} fill="#ffffff" />
+              <Sparkles size={18} fill="#ffffff" />
             </div>
             <span className="logo-text color-white">
-              Green <span className="logo-text-accent">Haven</span>
+              Uptown <span className="logo-text-accent">Picnic Co.</span>
             </span>
           </div>
           <p className="brand-tagline">
-            Solapur's premier agri-tourism and picnic sanctuary. Reconnect with nature, 
-            savor traditional delicacies, and create memories that last a lifetime.
+            Dallas-Fort Worth's premier luxury picnic and event experience company. 
+            We design, style, set up, and clean up custom pop-up picnics for your special celebrations.
           </p>
           <div className="social-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+            <a href="https://instagram.com/uptownpicnicco" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide-icon">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
               </svg>
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
+            <a href="https://facebook.com/uptownpicnic" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide-icon">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
               </svg>
@@ -85,15 +85,15 @@ export default function Footer() {
           <ul className="footer-contact-list">
             <li>
               <Phone size={16} className="contact-icon text-accent" />
-              <a href="tel:+18005550199">+1 (800) 555-0199</a>
+              <a href="tel:+12145550199">(214) 555-0199</a>
             </li>
             <li>
               <Mail size={16} className="contact-icon text-accent" />
-              <a href="mailto:info@greenhaven.com">info@greenhaven.com</a>
+              <a href="mailto:uptownpicnic@gmail.com">uptownpicnic@gmail.com</a>
             </li>
             <li className="align-start">
               <MapPin size={16} className="contact-icon text-accent mt-1" />
-              <span>Gat No. 44/2, Near Hipparga Lake, Solapur, Maharashtra - 413004</span>
+              <span>Serving Dallas, Fort Worth, and the surrounding DFW Metroplex areas</span>
             </li>
           </ul>
         </div>
@@ -102,7 +102,7 @@ export default function Footer() {
         <div className="footer-column footer-newsletter">
           <h4 className="footer-title">Newsletter</h4>
           <p className="newsletter-text">
-            Subscribe for exclusive weekend discounts and orchard harvesting announcements.
+            Subscribe for exclusive seasonal deals, styling tips, and new package announcements.
           </p>
 
           {!subscribed ? (
@@ -120,7 +120,7 @@ export default function Footer() {
             </form>
           ) : (
             <div className="newsletter-success animate-scale-in">
-              <Leaf size={16} className="text-accent" />
+              <Sparkles size={16} className="text-accent" />
               <span>Subscribed successfully!</span>
             </div>
           )}
@@ -131,9 +131,9 @@ export default function Footer() {
       {/* Copyright row */}
       <div className="footer-bottom">
         <div className="container footer-bottom-container">
-          <p>&copy; {new Date().getFullYear()} Green Haven Resort. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Uptown Picnic Company. All rights reserved.</p>
           <p className="developer-tag">
-            Made with <Heart size={12} fill="var(--accent)" stroke="var(--accent)" /> in Maharashtra
+            Made with <Heart size={12} fill="var(--accent)" stroke="var(--accent)" /> in Dallas, TX
           </p>
         </div>
       </div>

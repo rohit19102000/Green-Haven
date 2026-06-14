@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Menu, X, Leaf } from 'lucide-react';
+import { Phone, Menu, X, Sparkles } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -53,10 +53,10 @@ export default function Navbar() {
         {/* Logo */}
         <div className="nav-logo" onClick={() => handleNavClick('home')}>
           <div className="logo-icon">
-            <Leaf size={20} fill="#ffffff" />
+            <Sparkles size={20} fill="#ffffff" />
           </div>
           <span className="logo-text">
-            Green <span className="logo-text-accent">Haven</span>
+            Uptown <span className="logo-text-accent">Picnic Co.</span>
           </span>
         </div>
 
@@ -71,11 +71,11 @@ export default function Navbar() {
 
         {/* Action CTAs */}
         <div className="nav-actions">
-          <a href="tel:+18005550199" className="nav-phone-link">
+          <a href="tel:+12145550199" className="nav-phone-link">
             <div className="phone-icon-wrapper">
               <Phone size={16} />
             </div>
-            <span>Call Now</span>
+            <span>(214) 555-0199</span>
           </a>
           <button className="btn btn-accent" onClick={() => handleNavClick('booking')}>
             Book Now
@@ -94,9 +94,9 @@ export default function Navbar() {
           <div className="drawer-header">
             <div className="nav-logo" onClick={() => handleNavClick('home')}>
               <div className="logo-icon">
-                <Leaf size={18} fill="#ffffff" />
+                <Sparkles size={18} fill="#ffffff" />
               </div>
-              <span className="logo-text">Green Haven</span>
+              <span className="logo-text">Uptown Picnic Co.</span>
             </div>
             <button className="mobile-toggle" onClick={() => setIsOpen(false)}>
               <X size={24} />
@@ -112,9 +112,9 @@ export default function Navbar() {
           </ul>
 
           <div className="drawer-actions">
-            <a href="tel:+18005550199" className="nav-phone-link">
+            <a href="tel:+12145550199" className="nav-phone-link">
               <Phone size={18} />
-              <span>Call Now</span>
+              <span>(214) 555-0199</span>
             </a>
             <button className="btn btn-accent w-full" onClick={() => handleNavClick('booking')}>
               Book Now
