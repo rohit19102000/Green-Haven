@@ -11,18 +11,26 @@
   padding-top: 80px; /* navbar offset */
   overflow: hidden;
   background-color: var(--dark); /* Reveals deep green-black as bg-image disappears */
+  z-index: 1; /* Pinned below scrollable contents */
 }
 
 /* Background Wrapper for scroll-driven animations */
 .hero-bg-wrapper {
-  position: absolute;
+  position: fixed; /* Keep pinned to screen during scroll */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 1;
   overflow: hidden;
-  will-change: transform, opacity;
+  will-change: opacity;
+  pointer-events: none; /* Let clicks pass through */
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out; /* Takes exactly 0.8 seconds */
+}
+
+.hero-bg-wrapper.faded {
+  opacity: 0;
 }
 
 /* Background Image styling */

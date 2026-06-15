@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, ShieldCheck, Heart, MapPin, Award } from 'lucide-react';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 import './About.css';
 
 export default function About() {
-  const [revealRef, isRevealed] = useIntersectionObserver({ triggerOnce: true });
+  const [revealRef, isRevealed] = useIntersectionObserver({ triggerOnce: false });
+  const [isSolid, setIsSolid] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 400) {
+        setIsSolid(true);
+      } else {
+        setIsSolid(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const features = [
     { title: 'Bespoke Styled Themes', desc: 'From boho-chic to classic romance, we design and coordinate themes that perfectly match your vision.' },
@@ -14,7 +29,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="section about-section">
+    <section id="about" className={`section about-section ${isSolid ? 'solid-bg' : 'transparent-bg'}`}>
       <div 
         ref={revealRef} 
         className={`container about-container reveal-on-scroll ${isRevealed ? 'revealed' : ''}`}

@@ -7,7 +7,7 @@ export const PACKAGES = [
   {
     id: 'boho-dream',
     title: 'The Boho Dream',
-    price: 180,
+    price: 'X',
     tagline: 'Perfect for social gatherings & girls day out',
     icon: Sparkles,
     color: 'gold',
@@ -23,7 +23,7 @@ export const PACKAGES = [
   {
     id: 'romantic-rendezvous',
     title: 'Romantic Rendezvous',
-    price: 220,
+    price: 'X',
     tagline: 'Ideal for proposals, dates, & anniversaries',
     icon: Heart,
     color: 'orange',
@@ -39,7 +39,7 @@ export const PACKAGES = [
   {
     id: 'grand-celebration',
     title: 'The Grand Celebration',
-    price: 350,
+    price: 'X',
     tagline: 'For birthdays, showers, & micro-events',
     icon: Gift,
     color: 'purple',
@@ -55,7 +55,7 @@ export const PACKAGES = [
   {
     id: 'dfw-custom-luxe',
     title: 'DFW Custom Luxe',
-    price: 500,
+    price: 'X',
     tagline: 'Completely tailored corporate or social events',
     icon: Compass,
     color: 'green',
@@ -71,7 +71,7 @@ export const PACKAGES = [
 ];
 
 export default function Cards({ onSelectPackage }) {
-  const [revealRef, isRevealed] = useIntersectionObserver({ triggerOnce: true });
+  const [revealRef, isRevealed] = useIntersectionObserver({ triggerOnce: false });
   const [flippedCard, setFlippedCard] = useState(null);
 
   const handleBookClick = (e, pkg) => {

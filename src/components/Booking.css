@@ -286,7 +286,7 @@
 }
 
 .ticket-header {
-  background: linear-gradient(135deg, var(--primary), #4caf50);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: var(--white);
   padding: 16px 24px;
   display: flex;

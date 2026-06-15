@@ -1,8 +1,20 @@
 /* About Component Styling */
 
 .about-section {
-  background-color: var(--light);
-  border-bottom: 1px solid rgba(46, 125, 50, 0.06);
+  background-color: rgba(250, 247, 242, 0.3); /* Lighter cream 0.3 opacity */
+  border-bottom: 1px solid rgba(197, 168, 128, 0.18);
+  color: var(--text-dark);
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(12px); /* Premium glassmorphism frosted effect */
+  -webkit-backdrop-filter: blur(12px);
+  transition: background-color 0.8s ease-in-out, border-color 0.8s ease-in-out; /* Longer 0.8s transition */
+}
+
+.about-section.solid-bg {
+  background-color: var(--light); /* Solid cream color */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .about-container {
@@ -83,7 +95,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  border: 1px solid rgba(46, 125, 50, 0.08);
+  border: 1px solid rgba(197, 168, 128, 0.18);
 }
 
 .card-hover-up {
@@ -93,7 +105,7 @@
 .card-hover-up:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-md);
-  border-color: rgba(46, 125, 50, 0.2);
+  border-color: rgba(197, 168, 128, 0.4);
 }
 
 .stat-icon-wrapper {

@@ -5,7 +5,7 @@ import { PACKAGES } from './Cards';
 import './Booking.css';
 
 export default function Booking({ selectedPackageId, onSelectPackage }) {
-  const [revealRef, isRevealed] = useIntersectionObserver({ triggerOnce: true });
+  const [revealRef, isRevealed] = useIntersectionObserver({ triggerOnce: false });
   
   const [formData, setFormData] = useState({
     fullName: '',
@@ -29,17 +29,26 @@ export default function Booking({ selectedPackageId, onSelectPackage }) {
   const activePackage = PACKAGES.find(pkg => pkg.id === selectedPackageId) || PACKAGES[0];
 
   useEffect(() => {
-    const base = activePackage ? activePackage.price : 0;
-    const sub = base * formData.guests;
-    const taxVal = Math.round(sub * 0.0825); // 8.25% Dallas sales tax
-    const totalVal = sub + taxVal;
+    const base = activePackage ? activePackage.price : 'X';
+    if (base === 'X' || typeof base === 'string') {
+      setPricing({
+        basePrice: 'X',
+        subtotal: 'X',
+        tax: 'X',
+        total: 'X'
+      });
+    } else {
+      const sub = base * formData.guests;
+      const taxVal = Math.round(sub * 0.0825); // 8.25% Dallas sales tax
+      const totalVal = sub + taxVal;
 
-    setPricing({
-      basePrice: base,
-      subtotal: sub,
-      tax: taxVal,
-      total: totalVal
-    });
+      setPricing({
+        basePrice: base,
+        subtotal: sub,
+        tax: taxVal,
+        total: totalVal
+      });
+    }
   }, [selectedPackageId, formData.guests, activePackage]);
 
   const handleInputChange = (e) => {

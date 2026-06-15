@@ -3,19 +3,23 @@ import { ArrowRight, Phone } from 'lucide-react';
 import './Hero.css';
 
 export default function Hero() {
-  const [bgOpacity, setBgOpacity] = useState(1);
+  const [isBgFaded, setIsBgFaded] = useState(false);
   const [bgTranslateY, setBgTranslateY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const threshold = window.innerHeight; // fade out fully over 1 viewport height
       
-      const progress = Math.min(scrollPosition / threshold, 1);
+      // Fade bg-image once user scrolls past 400px (drives a 0.5s CSS animation)
+      if (scrollPosition > 400) {
+        setIsBgFaded(true);
+      } else {
+        setIsBgFaded(false);
+      }
       
-      // Calculate opacity (1 down to 0) and parallax translation (30% scroll speed)
-      setBgOpacity(1 - progress);
-      setBgTranslateY(scrollPosition * 0.35);
+      // Calculate slow parallax translation
+      const translateY = scrollPosition * 0.15;
+      setBgTranslateY(translateY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -39,17 +43,17 @@ export default function Hero() {
     <header id="home" className="hero-section">
       {/* Background Image Container Wrapper */}
       <div 
-        className="hero-bg-wrapper"
-        style={{ 
-          opacity: bgOpacity,
-          transform: `translateY(${bgTranslateY}px)`
-        }}
+        className={`hero-bg-wrapper ${isBgFaded ? 'faded' : ''}`}
       >
-        <div className="hero-bg"></div>
+        <div 
+          className="hero-bg"
+          style={{ 
+            transform: `translateY(${bgTranslateY}px)`
+          }}
+        ></div>
+        {/* Vignette/Gradient Overlay */}
+        <div className="hero-overlay"></div>
       </div>
-      
-      {/* Vignette/Gradient Overlay */}
-      <div className="hero-overlay"></div>
 
       {/* Hero Content */}
       <div className="hero-container container">

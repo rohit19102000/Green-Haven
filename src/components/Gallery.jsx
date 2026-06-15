@@ -37,7 +37,7 @@ const GALLERY_IMAGES = [
 ];
 
 export default function Gallery() {
-  const [revealRef, isRevealed] = useIntersectionObserver({ triggerOnce: true });
+  const [revealRef, isRevealed] = useIntersectionObserver({ triggerOnce: false });
   const [filter, setFilter] = useState('all');
   const [lightboxIndex, setLightboxIndex] = useState(null);
 

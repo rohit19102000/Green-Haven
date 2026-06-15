@@ -6,10 +6,11 @@ import Cards from './components/Cards';
 import Gallery from './components/Gallery';
 import Booking from './components/Booking';
 import Footer from './components/Footer';
+import Butterfly from './components/Butterfly';
 
 function App() {
   // Shared state to sync card selections with the booking wizard
-  const [selectedPackageId, setSelectedPackageId] = useState('rustic-picnic');
+  const [selectedPackageId, setSelectedPackageId] = useState('boho-dream');
 
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
         <Booking selectedPackageId={selectedPackageId} onSelectPackage={setSelectedPackageId} />
       </main>
       <Footer />
+      <Butterfly />
     </>
   );
 }
